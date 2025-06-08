@@ -80,20 +80,34 @@
             </div>
             <div class="mb-4">
                 <a href="#">
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M17.9441 5.92641C17.9568 6.10406 17.9568 6.28176 17.9568 6.45941C17.9568 11.8782 13.8325 18.1218 6.29441 18.1218C3.97207 18.1218 1.81473 17.4492 0 16.2818C0.329961 16.3198 0.647187 16.3325 0.989844 16.3325C2.90605 16.3325 4.67004 15.6853 6.07867 14.5813C4.27664 14.5432 2.76648 13.363 2.24617 11.7386C2.5 11.7766 2.75379 11.802 3.02031 11.802C3.38832 11.802 3.75637 11.7513 4.09898 11.6625C2.22082 11.2817 0.812148 9.63199 0.812148 7.63961V7.58887C1.35781 7.89344 1.99238 8.08379 2.66492 8.10914C1.56086 7.37309 0.837539 6.11676 0.837539 4.69543C0.837539 3.93402 1.04055 3.23606 1.3959 2.62692C3.41367 5.11422 6.44668 6.73856 9.84766 6.91625C9.78422 6.61168 9.74613 6.29445 9.74613 5.97719C9.74613 3.71828 11.5736 1.8782 13.8451 1.8782C15.0253 1.8782 16.0913 2.37313 16.84 3.17262C17.7664 2.99496 18.6547 2.65231 19.4416 2.18277C19.137 3.13457 18.4898 3.93406 17.6395 4.44164C18.4644 4.35285 19.2639 4.12438 19.9999 3.80715C19.4416 4.6193 18.7436 5.34262 17.9441 5.92641Z"
-                            fill="#F2D492"
-                        />
-                    </svg>
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+                    <g fill="#f2d492" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                     stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                     text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)">
+                        <path d="M6.91992,6l14.2168,20.72656l-14.9082,17.27344h3.17773l13.13867,-15.22266l10.44141,15.22266h10.01367l-14.87695,-21.6875l14.08008,-16.3125h-3.17578l-12.31055,14.26172l-9.7832,-14.26172z">
+
+                        </path></g></g></svg>
                 </a>
             </div>
+             <div class="mb-4">
+             <a href="mailto:christianuyeh@gmail.com" style="text-decoration: none;">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#F2D492"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+    <polyline points="3 7 12 13 21 7"></polyline>
+  </svg>
+</a>
+            </div>
+
         </div>
 
         <nav
@@ -257,28 +271,6 @@
                                 >
                             </div>
                         </li>
-                        <li
-                            @click="navSelect = 'contact'"
-                            class="nav-item me-3 animate__animated animate__fadeInDown"
-                            style="animation-delay: 500ms"
-                        >
-                            <div class="d-flex flex-column align-items-center">
-                                <span
-                                    v-if="navSelect === 'contact'"
-                                    class="active-dot animate__animated animate__fadeInDown"
-                                ></span>
-                                <a
-                                    :class="[
-                                        navSelect === 'contact'
-                                            ? 'active-link pt-0'
-                                            : 'inactive-link',
-                                    ]"
-                                    class="nav-link"
-                                    href="#"
-                                    >Contact</a
-                                >
-                            </div>
-                        </li>
                     </ul>
                     <form
                         class="d-flex ms-5 animate__animated animate__fadeInDown"
@@ -294,7 +286,7 @@
         <transition>
           <Main v-if="currentState === 'index'" :navSelect="navSelect" />
         </transition>
-        <transition enter-active-class="animate__animated animate__fadeIn">
+        <transition class="animate__animated animate__fadeIn">
           <CurrencyConverter v-if="currentState === 'currency-converter'" style="animation-delay: 300ms" />
         </transition>
       </div>
@@ -335,16 +327,6 @@
                 class="mb-4"
                 :class="[
                     navSelect == 'project'
-                        ? 'active-small-nav'
-                        : 'inactive-small-nav',
-                ]"
-                href="#"
-            ></a>
-            <a
-                @click.prevent="scrollToSection('contact')"
-                class="mb-4"
-                :class="[
-                    navSelect == 'contact'
                         ? 'active-small-nav'
                         : 'inactive-small-nav',
                 ]"
@@ -496,8 +478,8 @@ export default {
     mounted() {
         window.scrollTo(0, 0);
         this.year = DateTime.now().year;
-        if (newVal === 'home')
-            window.addEventListener("scroll", this.handleScroll);
+
+        window.addEventListener("scroll", this.handleScroll);
 
         if (this.$route.name === 'currency-converter' && !this.userClickedTab) {
              this.navSelect = 'project';
