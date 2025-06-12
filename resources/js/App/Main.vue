@@ -1,52 +1,49 @@
 <template>
     <div>
-        <div class="container"  id="home">
-            <div class="row welcome">
-                <div class="col-7">
+        <div class="container"  id="section-home">
+            <div class="row  px-3 px-lg-0" :class="[isMobile ? 'welcome-2' : 'welcome']">
+                <div class="col-12 col-lg-7">
                     <div
                         class="d-flex flex-column h-100 justify-content-center"
                     >
                         <div
-                            class="hello nav-item m me-3"  :class="{ 'animate__animated animate__slideInUp': navSelect === 'home' }"
+                            class="hello nav-item m me-3 animate__animated animate__slideInUp"
                             style="animation-delay: 0ms"
                         >
-                            Hello, my name is
+                            Hi, my name is
                         </div>
                         <div
-                            class="name nav-item m me-3"  :class="{ 'animate__animated animate__slideInUp': navSelect === 'home' }"
+                            class="name nav-item m me-3 animate__animated animate__slideInUp"
                             style="animation-delay: 100ms"
                         >
                             Christian Uyeh.
                         </div>
                         <div
-                            class="build nav-item m me-3"  :class="{ 'animate__animated animate__fadeInUp': navSelect === 'home' }"
+                            class="build nav-item m me-3 animate__animated animate__fadeInUp"
                             style="animation-delay: 400ms"
                         >
-                            I build things for Mobile and web.
+                        I craft impactful digital experiences for the web.
+
                         </div>
-                        <div
-                            class="intro mb-3 nav-item m me-3"  :class="{ 'animate__animated animate__fadeInUp': navSelect === 'home' }"
+                        <p
+                            class="intro mb-3 nav-item m me-3 animate__animated animate__fadeInUp"
                             style="animation-delay: 500ms"
                         >
-                            I'm a software engineer, specializing in building
-                            exceptional<br />
-                            websites, applications, and everything.
-                        </div>
+                          As a software engineer, I specialize in building exceptional websites, web applications, and everything in between — blending functionality with clean, modern design.
+                        </p>
 
                         <div>
-                            <button
-                                class="btn mt-4 in-touch nav-item m me-3" :class="{ 'animate__animated animate__fadeInUp': navSelect === 'home' }"
+                            <a href="mailto:christianuyeh@gmail.com"
+                                class="btn mt-4 in-touch nav-item m me-3 animate__animated animate__fadeInUp"
                                 style="animation-delay: 600ms"
-                                type="submit"
-                            >
+                                onclick="this.blur();">
                                 Get in Touch
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
-                    <svg
-                        :class="{ 'animate__animated animate__fadeInRight': navSelect === 'home' }"
+                <div class="col-12 col-lg-5">
+                    <svg class="w-100 d-block d-lg-inline animate__animated animate__fadeInRight"
                         width="550"
                         height="600"
                         viewBox="0 0 490 470"
@@ -298,9 +295,9 @@
                 </div>
             </div>
         </div>
-        <div class="container  my-section"  id="about">
-            <div class="row about">
-                <div class="col-6">
+        <div class="container" :class="{'my-section' : !isMobile}" id="section-about">
+            <div class="row about  px-3 px-lg-0">
+                <div class="col-12 col-lg-6">
                     <div class="d-flex flex-column justify-content-center">
                         <div class="active-text nav-item m me-3">About Me</div>
                         <svg
@@ -342,20 +339,13 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="col-6 d-flex justify-content-end align-items-center"
-                >
-                    <!-- <img
-                        src="http://christianuyeh.test/christian.JPG"
-                        alt="Avatar"
-                        class="avatar mt-5"
-                    /> -->
+                <div class="col-12 col-lg-6 d-flex justify-content-end align-items-center">
                     <div class="about-img"></div>
                 </div>
             </div>
         </div>
-        <div class="container my-section"  id="experience">
-            <div class="about">
+        <div class="container my-section"  id="section-experience">
+            <div class="about px-3 px-lg-0">
                 <div class="active-text nav-item m me-3">Experience</div>
                 <svg
                     class="ms-3"
@@ -368,8 +358,22 @@
                     <path d="M0 0H54V7H27H0V0Z" fill="#F29559" />
                     <path d="M79 0H133V7H106H79V0Z" fill="#F29559" />
                 </svg>
+                <div v-if="isMobile" class="vertical-nav d-flex mt-5">
+                  <div class="d-flex align-items-center"  @click="companySelect = 'first'"
+                            :class="[
+                                companySelect === 'first'
+                                    ? 'vertical-nav-active'
+                                    : 'vertical-nav-inactive',
+                            ]">Lightman</div>
+                    <div class="d-flex align-items-center"  @click="companySelect = 'second'"
+                            :class="[
+                                companySelect === 'second'
+                                    ? 'vertical-nav-active'
+                                    : 'vertical-nav-inactive',
+                            ]">Legion</div>
+                </div>
                 <div class="d-flex w-100 mt-5">
-                    <div class="horizonal-nav">
+                    <div v-if="!isMobile" class="horizonal-nav">
                         <div
                             @click="companySelect = 'first'"
                             :class="[
@@ -395,8 +399,8 @@
                         v-if="companySelect === 'first'"
                         class="d-flex flex-column animate__animated animate__fadeIn"
                     >
-                        <div class="d-flex">
-                            <div class="header-about me-2">
+                        <div class="d-flex mb-4">
+                            <div class="me-2" :class="[isMobile ? 'header-about-2' : 'header-about']">
                                 Software Developer
                             </div>
                             <a
@@ -404,7 +408,7 @@
                                 target="_blank"
                                 style="text-decoration: none; color: inherit"
                             >
-                                <div class="header-about-company">
+                            <div class=""  :class="[isMobile ? 'header-about-company-2' : 'header-about-company']">
                                     @ Lightman Consulting Sdn Bhd
                                 </div></a
                             >
@@ -445,11 +449,11 @@
                         v-if="companySelect === 'second'"
                         class="d-flex flex-column animate__animated animate__fadeIn"
                     >
-                        <div class="d-flex">
-                            <div class="header-about me-2">
+                        <div class="d-flex mb-4">
+                            <div class="me-2" :class="[isMobile ? 'header-about-2' : 'header-about']">
                                 Software Developer
                             </div>
-                            <div class="header-about-company">
+                            <div class=""  :class="[isMobile ? 'header-about-company-2' : 'header-about-company']">
                                 @ Legion Technology Enterprise
                             </div>
                         </div>
@@ -492,7 +496,7 @@
                 </div>
             </div>
         </div>
-        <div class="container my-section"  id="project">
+        <div class="container" :class="{'my-section' : !isMobile}"   id="section-project">
             <div class="about">
                 <div class="active-text nav-item m me-3">Projects</div>
                 <svg
@@ -509,30 +513,25 @@
 
                 <div class="text-center">
                     <div class="row mt-5">
-                        <div class="col mb-3">
+                        <div class="col-12 col-lg mb-3">
                             <div
-                                class="card card-bg shadow-lg"
-                                style="width: 18rem; cursor: pointer"
-                                @click="$router.push('/currency-converter')"
+                                class="card card-bg shadow-lg" :class="[isMobile ? 'card-project-2' : 'card-project']"
+                                @click="()=>{$router.push('/currency-converter');$emit('toggleDrawer');}"
                             >
                                 <img
-                                    src="/public/CurrencyConverter.png"
-                                    class="card-img-top"
+                                    src="/public/CurrencyConverter-small.png"
+                                    class="card-img-top w-100 h-100"
                                     alt="..."
                                 />
                                 <div class="card-body">
                                     <h5 class="card-title main-moph">
                                         CurrencyConverter
                                     </h5>
-                                    <p class="card-text company-sub">
+                                    <p class="card-text text-light">
                                         Stay ahead with real-time exchange rates
                                         and make confident.....
                                     </p>
-                                    <!-- <a
-                                        @click="state = 'CurrencyConverter'"
-                                        class="btn btn-project"
-                                        >Go somewhere</a
-                                    > -->
+
                                 </div>
                             </div>
                         </div>
@@ -554,6 +553,8 @@ export default {
     data() {
         return {
             companySelect: "first",
+            isMobile: window.innerWidth < 992
+
         };
     },
     computed: {
@@ -567,11 +568,17 @@ export default {
         },
     },
     methods: {
+         checkMobile() {
+          this.isMobile = window.innerWidth < 992;
+        }
 
-
+    },
+     beforeDestroy() {
+       window.removeEventListener("resize", this.checkMobile);
     },
     created() {},
     mounted() {
+     window.addEventListener("resize", this.checkMobile);
     },
 };
 </script>

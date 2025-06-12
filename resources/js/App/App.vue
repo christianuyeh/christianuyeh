@@ -6,9 +6,9 @@
             <div id="stars3"></div>
             <div id="stars4"></div>
         </div>
-        <div class="social">
+         <div v-if="!isMobile" class="social">
             <div class="mb-4">
-                <a href="#"
+                <a href="https://github.com/christianuyeh" target="_blank" rel="noopener noreferrer"
                     ><svg
                         width="20"
                         height="20"
@@ -24,7 +24,7 @@
                 </a>
             </div>
             <div class="mb-4">
-                <a href="#"
+                <a  href="https://www.linkedin.com/in/christian-uyeh-9b416a179/" target="_blank" rel="noopener noreferrer"
                     ><svg
                         width="20"
                         height="20"
@@ -40,7 +40,7 @@
                 </a>
             </div>
             <div class="mb-4">
-                <a href="#">
+                <a href="https://codepen.io/uhchristian" target="_blank" rel="noopener noreferrer">
                     <svg
                         width="20"
                         height="20"
@@ -56,7 +56,7 @@
                 </a>
             </div>
             <div class="mb-4">
-                <a href="#">
+                <a href="https://www.instagram.com/christianuyeh/" target="_blank" rel="noopener noreferrer">
                     <svg
                         width="20"
                         height="20"
@@ -79,33 +79,39 @@
                 </a>
             </div>
             <div class="mb-4">
-                <a href="#">
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M17.9441 5.92641C17.9568 6.10406 17.9568 6.28176 17.9568 6.45941C17.9568 11.8782 13.8325 18.1218 6.29441 18.1218C3.97207 18.1218 1.81473 17.4492 0 16.2818C0.329961 16.3198 0.647187 16.3325 0.989844 16.3325C2.90605 16.3325 4.67004 15.6853 6.07867 14.5813C4.27664 14.5432 2.76648 13.363 2.24617 11.7386C2.5 11.7766 2.75379 11.802 3.02031 11.802C3.38832 11.802 3.75637 11.7513 4.09898 11.6625C2.22082 11.2817 0.812148 9.63199 0.812148 7.63961V7.58887C1.35781 7.89344 1.99238 8.08379 2.66492 8.10914C1.56086 7.37309 0.837539 6.11676 0.837539 4.69543C0.837539 3.93402 1.04055 3.23606 1.3959 2.62692C3.41367 5.11422 6.44668 6.73856 9.84766 6.91625C9.78422 6.61168 9.74613 6.29445 9.74613 5.97719C9.74613 3.71828 11.5736 1.8782 13.8451 1.8782C15.0253 1.8782 16.0913 2.37313 16.84 3.17262C17.7664 2.99496 18.6547 2.65231 19.4416 2.18277C19.137 3.13457 18.4898 3.93406 17.6395 4.44164C18.4644 4.35285 19.2639 4.12438 19.9999 3.80715C19.4416 4.6193 18.7436 5.34262 17.9441 5.92641Z"
-                            fill="#F2D492"
-                        />
-                    </svg>
+                <a href="https://x.com/Uhchristian" target="_blank" rel="noopener noreferrer">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+                    <g fill="#f2d492" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                     stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                     text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)">
+                        <path d="M6.91992,6l14.2168,20.72656l-14.9082,17.27344h3.17773l13.13867,-15.22266l10.44141,15.22266h10.01367l-14.87695,-21.6875l14.08008,-16.3125h-3.17578l-12.31055,14.26172l-9.7832,-14.26172z">
+
+                        </path></g></g></svg>
                 </a>
             </div>
+             <div class="mb-4">
+             <a href="mailto:christianuyeh@gmail.com" style="text-decoration: none;">
+         <svg
+           xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="#F2D492"
+           stroke-width="2"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+           <polyline points="3 7 12 13 21 7"></polyline>
+         </svg>
+          </a>
+            </div>
+
         </div>
 
-        <nav
-            id="navBar"
-            class="navbar navbar-expand-lg bg-body-tertiary sticky-top"
-        >
-            <div class="container-fluid mx-5">
-                <a
-                    class="navbar-brand"
-                    href="#"
-                    @click.prevent="scrollToSection('home')"
-                >
+        <nav id="navBar" class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+            <div class="container-fluid mx-0 mx-sm-1 mx-md-2 mx-lg-5">
+                <a class="navbar-brand" href="#" @click.prevent="scrollToSection('section-home')"  aria-label="Go to Home">
                     <svg
                         width="38"
                         height="47"
@@ -164,90 +170,93 @@
                         </defs>
                     </svg>
                 </a>
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
+              <button class="navbar-toggler third-button" type="button" @click="toggleDrawer" aria-label="Toggle navigation menu"
+>
+                <div class="animated-icon3"><span></span><span></span><span></span></div>
+              </button>
+                <div class="navbar-collapse" :class="{ collapse: !isDrawerOpen, show: isDrawerOpen }"
+               id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li
-                            @click.prevent="scrollToSection('home')"
-                            class="nav-item m me-3 animate__animated animate__fadeInDown"
+                            @click.prevent="scrollToSection('section-home')"
+                            class="nav-item m me-lg-3 animate__animated animate__fadeInDown"
                             style="animation-delay: 0ms"
                         >
                             <div class="d-flex flex-column align-items-center">
                                 <span
-                                    v-if="navSelect === 'home'"
+                                    v-if="navSelect === 'section-home'"
                                     class="active-dot animate__animated animate__fadeInDown"
                                 ></span>
                                 <a
                                     :class="[
-                                        navSelect === 'home'
+                                        navSelect === 'section-home'
                                             ? 'active-link pt-0'
                                             : 'inactive-link',
                                     ]"
                                     class="nav-link"
-                                    href="#"
+                                      href="#"
                                     >Home</a
                                 >
                             </div>
                         </li>
                         <li
-                            @click.prevent="scrollToSection('about')"
-                            class="nav-item m me-3 animate__animated animate__fadeInDown"
+                            @click.prevent="scrollToSection('section-about')"
+                            class="nav-item m me-lg-3 animate__animated animate__fadeInDown"
                             style="animation-delay: 200ms"
                         >
                             <div class="d-flex flex-column align-items-center">
                                 <span
-                                    v-if="navSelect === 'about'"
+                                    v-if="navSelect === 'section-about'"
                                     class="active-dot animate__animated animate__fadeInDown"
                                 ></span>
                                 <a
                                     :class="[
-                                        navSelect === 'about'
+                                        navSelect === 'section-about'
                                             ? 'active-link pt-0'
                                             : 'inactive-link',
                                     ]"
                                     class="nav-link"
-                                    href="#"
+                                      href="#"
                                     >About</a
                                 >
                             </div>
                         </li>
                         <li
-                            @click.prevent="scrollToSection('experience')"
-                            class="nav-item m me-3 animate__animated animate__fadeInDown"
+                            @click.prevent="scrollToSection('section-experience')"
+                            class="nav-item m me-lg-3 animate__animated animate__fadeInDown"
                             style="animation-delay: 300ms"
                         >
                             <div class="d-flex flex-column align-items-center">
                                 <span
-                                    v-if="navSelect === 'experience'"
+                                    v-if="navSelect === 'section-experience'"
                                     class="active-dot animate__animated animate__fadeInDown"
                                 ></span>
                                 <a
                                     :class="[
-                                        navSelect === 'experience'
+                                        navSelect === 'section-experience'
                                             ? 'active-link pt-0'
                                             : 'inactive-link',
                                     ]"
                                     class="nav-link"
-                                    href="#experience"
+                                      href="#"
+
                                     >Experience</a
                                 >
                             </div>
                         </li>
                         <li
-                            @click.prevent="scrollToSection('project')"
-                            class="nav-item m me-3 animate__animated animate__fadeInDown"
+                            @click.prevent="scrollToSection('section-project')"
+                            class="nav-item m me-lg-3 animate__animated animate__fadeInDown"
                             style="animation-delay: 400ms"
                         >
                             <div class="d-flex flex-column align-items-center">
                                 <span
-                                    v-if="navSelect === 'project'"
+                                    v-if="navSelect === 'section-project'"
                                     class="active-dot animate__animated animate__fadeInDown"
                                 ></span>
                                 <a
                                     :class="[
-                                        navSelect === 'project'
+                                        navSelect === 'section-project'
                                             ? 'active-link pt-0'
                                             : 'inactive-link',
                                     ]"
@@ -257,94 +266,62 @@
                                 >
                             </div>
                         </li>
-                        <li
-                            @click="navSelect = 'contact'"
-                            class="nav-item me-3 animate__animated animate__fadeInDown"
-                            style="animation-delay: 500ms"
-                        >
-                            <div class="d-flex flex-column align-items-center">
-                                <span
-                                    v-if="navSelect === 'contact'"
-                                    class="active-dot animate__animated animate__fadeInDown"
-                                ></span>
-                                <a
-                                    :class="[
-                                        navSelect === 'contact'
-                                            ? 'active-link pt-0'
-                                            : 'inactive-link',
-                                    ]"
-                                    class="nav-link"
-                                    href="#"
-                                    >Contact</a
-                                >
-                            </div>
-                        </li>
                     </ul>
                     <form
-                        class="d-flex ms-5 animate__animated animate__fadeInDown"
+                        class="d-flex animate__animated animate__fadeInDown justify-content-center justify-content-lg-start"
                         role="search"
                         style="animation-delay: 600ms"
                     >
-                        <a class="btn btn-resume" type="submit">Resume</a>
+                        <a class="btn btn-resume"  onclick="this.blur();">Resume</a>
                     </form>
                 </div>
             </div>
         </nav>
       <div v-if="isRouteReady">
         <transition>
-          <Main v-if="currentState === 'index'" :navSelect="navSelect" />
+          <Main v-if="currentState === 'index'" :navSelect="navSelect" @toggleDrawer="()=>{ if (isDrawerOpen) toggleDrawer()}" />
         </transition>
-        <transition enter-active-class="animate__animated animate__fadeIn">
+        <transition class="animate__animated animate__fadeIn">
           <CurrencyConverter v-if="currentState === 'currency-converter'" style="animation-delay: 300ms" />
         </transition>
       </div>
 
-        <div class="small-nav d-flex flex-column">
+        <div v-if="!isMobile" class="small-nav d-flex flex-column">
             <a
-                @click.prevent="scrollToSection('home')"
+                @click.prevent="scrollToSection('section-home')"
                 class="mb-4"
                 :class="[
-                    navSelect == 'home'
+                    navSelect == 'section-home'
                         ? 'active-small-nav'
                         : 'inactive-small-nav',
                 ]"
                 href="#"
             ></a>
             <a
-                @click.prevent="scrollToSection('about')"
+                @click.prevent="scrollToSection('section-about')"
                 class="mb-4"
                 :class="[
-                    navSelect == 'about'
+                    navSelect == 'section-about'
                         ? 'active-small-nav'
                         : 'inactive-small-nav',
                 ]"
                 href="#"
             ></a>
             <a
-                @click.prevent="scrollToSection('experience')"
+                @click.prevent="scrollToSection('section-experience')"
                 class="mb-4"
                 :class="[
-                    navSelect == 'experience'
+                    navSelect == 'section-experience'
                         ? 'active-small-nav'
                         : 'inactive-small-nav',
                 ]"
-                href="#"
+                  href="#"
             ></a>
             <a
-                @click.prevent="scrollToSection('project')"
+                @click.prevent="scrollToSection('section-project')"
                 class="mb-4"
                 :class="[
-                    navSelect == 'project'
-                        ? 'active-small-nav'
-                        : 'inactive-small-nav',
-                ]"
-                href="#"
-            ></a>
-            <a
-                @click.prevent="scrollToSection('contact')"
-                class="mb-4"
-                :class="[
-                    navSelect == 'contact'
+                    navSelect == 'section-project'
                         ? 'active-small-nav'
                         : 'inactive-small-nav',
                 ]"
@@ -367,7 +344,7 @@ export default {
     props: {},
     data() {
         return {
-            navSelect: "home",
+            navSelect: "section-home",
             companySelect: "first",
             year: null,
             shared: {
@@ -377,7 +354,8 @@ export default {
             userClickedTab: false,
             currentState: 'index',
              isRouteReady: false,
-
+            isDrawerOpen: false,
+           isMobile: window.innerWidth < 992
 
         };
     },
@@ -393,62 +371,82 @@ export default {
     updateStateFromRoute(routeName) {
       if (routeName === 'currency-converter') {
         this.currentState = 'currency-converter';
-        this.navSelect = 'project';
+        this.navSelect = 'section-project';
       } else {
         this.currentState = 'index';
       }
     },
         onResizeLeft() {
-            if ($(window).scrollTop() > 10) {
-                $("#navBar").addClass("shadow");
-            } else {
-                $("#navBar").removeClass("shadow");
-            }
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+           const isMobile = window.innerWidth <= 768; // adjust breakpoint if needed
+
+           if (scrollTop > 10) {
+               $("#navBar").addClass("shadow");
+           } else {
+               // Only remove shadow if NOT on mobile
+               if (!isMobile) {
+                   $("#navBar").removeClass("shadow");
+               }
+           }
         },
-      scrollToSection(id) {
-          if (this.$route.name === 'currency-converter') {
-            // Store the ID for scroll after navigation
-            this.navSelect = id;
+        scrollToSection(id) {
 
-            // Navigate to home and scroll after it's loaded
-            this.$router.push({ name: 'home' }).then(() => {
-              // Use $nextTick to ensure DOM is ready
-              this.$nextTick(() => {
-                this.isProgrammaticScroll = true;
+             this.toggleDrawer();
 
-                const element = document.getElementById(id);
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
+  // Determine offset dynamically (based on viewport or header)
+  const getYOffset = () => {
+    // Option 1: Based on screen width (mobile vs desktop)
+    const mobileOffset = this.navSelect === 'section-about'? -290 : -200;
+    const desktopOffset = -100;
 
-                  setTimeout(() => {
-                    this.isProgrammaticScroll = false;
-                  }, 1000);
-                }
-              });
-            });
+    // Option 2: Based on fixed header height (if any)
+    const header = document.getElementById("navbar"); // Replace with your header ID if needed
+    if (header) return -header.offsetHeight;
 
-         return; // stop here
-       }
+    // Fallback
+    return window.innerWidth < 768 ? mobileOffset : desktopOffset;
+  };
 
-         // Normal route behavior (not currency-converter)
-         this.navSelect = id;
-         this.isProgrammaticScroll = true;
+  const scrollToElement = (element) => {
+    if (element) {
+      const yOffset = getYOffset();
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-         const element = document.getElementById(id);
-         if (element) {
-           element.scrollIntoView({
-             behavior: "smooth",
-             block: "center",
-           });
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
 
-           setTimeout(() => {
-             this.isProgrammaticScroll = false;
-           }, 1000);
-         }
-       },
+      setTimeout(() => {
+        this.isProgrammaticScroll = false;
+      }, 1000);
+    }
+  };
+
+  // If coming from a different route (e.g., 'currency-converter')
+  if (this.$route.name === "currency-converter") {
+    this.navSelect = id;
+
+    this.$router.push({ name: "home" }).then(() => {
+      this.$nextTick(() => {
+        this.isProgrammaticScroll = true;
+        const element = document.getElementById(id);
+        scrollToElement(element);
+      });
+    });
+
+    return;
+  }
+
+  // If already on the home page
+  this.navSelect = id;
+  this.isProgrammaticScroll = true;
+  const element = document.getElementById(id);
+  scrollToElement(element);
+
+        },
+
         onScroll(item){
               setTimeout(() => {
                     this.scrollToSection(this.navSelect);
@@ -456,12 +454,10 @@ export default {
         },
         handleScroll() {
             if (this.isProgrammaticScroll) return;
-            const centerY = window.innerHeight / 2 + window.scrollY;
+            const offset = 50; // adjust as needed
+             const centerY = window.innerHeight / 2 + window.scrollY + offset;
 
-            // Select all your sections manually
-            const sections = document.querySelectorAll(
-                "#home, #about, #experience, #project"
-            );
+             const sections = document.querySelectorAll("[id^='section-']");
 
             for (const el of sections) {
                 const rect = el.getBoundingClientRect();
@@ -477,6 +473,26 @@ export default {
                 }
             }
         },
+        toggleDrawer() {
+           this.isDrawerOpen = !this.isDrawerOpen;
+
+           const icon = document.querySelector('.animated-icon3');
+           if (icon) {
+               if (this.isDrawerOpen) {
+                   icon.classList.add('open');
+               } else {
+                   icon.classList.remove('open');
+               }
+           }
+
+         },
+         closeDrawer() {
+         this.isDrawerOpen = false;
+         },
+        checkMobile() {
+          this.isMobile = window.innerWidth < 992;
+        }
+
     },
     created() {
         window.addEventListener("scroll", this.onResizeLeft);
@@ -492,16 +508,22 @@ export default {
         window.removeEventListener("scroll", this.onResizeLeft);
         if (newVal === 'home')
           window.removeEventListener("scroll", this.handleScroll);
+
+         window.removeEventListener("resize", this.checkMobile);
+
+
     },
     mounted() {
         window.scrollTo(0, 0);
         this.year = DateTime.now().year;
-        if (newVal === 'home')
-            window.addEventListener("scroll", this.handleScroll);
+
+        window.addEventListener("scroll", this.handleScroll);
 
         if (this.$route.name === 'currency-converter' && !this.userClickedTab) {
-             this.navSelect = 'project';
+             this.navSelect = 'section-project';
         }
+       window.addEventListener("resize", this.checkMobile);
+
     },
     watch: {
         '$route.name'(newVal) {
