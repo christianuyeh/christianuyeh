@@ -8,8 +8,7 @@
         </div>
          <div v-if="!isMobile" class="social">
             <div class="mb-4">
-                <a href="https://github.com/christianuyeh" target="_blank" rel="noopener noreferrer"
-                    ><svg
+                <a href="https://github.com/christianuyeh" target="_blank" rel="noopener noreferrer"><svg
                         width="20"
                         height="20"
                         viewBox="0 0 20 20"
@@ -111,7 +110,7 @@
 
         <nav id="navBar" class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
             <div class="container-fluid mx-0 mx-sm-1 mx-md-2 mx-lg-5">
-                <a class="navbar-brand" href="#" @click.prevent="scrollToSection('section-home')"  aria-label="Go to Home">
+                <a class="navbar-brand animate__animated animate__fadeInDown" href="#" @click.prevent="scrollToSection('section-home')"  aria-label="Go to Home" style="animation-delay: 50ms">
                     <svg
                         width="38"
                         height="47"
@@ -180,7 +179,7 @@
                         <li
                             @click.prevent="scrollToSection('section-home')"
                             class="nav-item m me-lg-3 animate__animated animate__fadeInDown"
-                            style="animation-delay: 0ms"
+                            style="animation-delay: 100ms"
                         >
                             <div class="d-flex flex-column align-items-center">
                                 <span
@@ -368,89 +367,85 @@ export default {
 
     },
     methods: {
-    updateStateFromRoute(routeName) {
-      if (routeName === 'currency-converter') {
-        this.currentState = 'currency-converter';
-        this.navSelect = 'section-project';
-      } else {
-        this.currentState = 'index';
-      }
-    },
+        updateStateFromRoute(routeName) {
+            if (routeName === 'currency-converter') {
+                this.currentState = 'currency-converter';
+                this.navSelect = 'section-project';
+            } else {
+                this.currentState = 'index';
+            }
+        },
         onResizeLeft() {
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-           const isMobile = window.innerWidth <= 768; // adjust breakpoint if needed
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const isMobile = window.innerWidth <= 768; // adjust breakpoint if needed
 
-           if (scrollTop > 10) {
-               $("#navBar").addClass("shadow");
-           } else {
-               // Only remove shadow if NOT on mobile
-               if (!isMobile) {
-                   $("#navBar").removeClass("shadow");
-               }
-           }
+            if (scrollTop > 10) {
+                $("#navBar").addClass("shadow");
+            } else {
+                // Only remove shadow if NOT on mobile
+                if (!isMobile) {
+                    $("#navBar").removeClass("shadow");
+                }
+            }
         },
         scrollToSection(id) {
+            this.toggleDrawer();
+            // Determine offset dynamically (based on viewport or header)
+            const getYOffset = () => {
+                // Option 1: Based on screen width (mobile vs desktop)
+                const mobileOffset = this.navSelect === 'section-about'? -290 : -200;
+                const desktopOffset = -100;
 
-             this.toggleDrawer();
+                // Option 2: Based on fixed header height (if any)
+                const header = document.getElementById("navbar"); // Replace with your header ID if needed
+                if (header) return -header.offsetHeight;
 
-  // Determine offset dynamically (based on viewport or header)
-  const getYOffset = () => {
-    // Option 1: Based on screen width (mobile vs desktop)
-    const mobileOffset = this.navSelect === 'section-about'? -290 : -200;
-    const desktopOffset = -100;
+                // Fallback
+                return window.innerWidth < 768 ? mobileOffset : desktopOffset;
+            };
 
-    // Option 2: Based on fixed header height (if any)
-    const header = document.getElementById("navbar"); // Replace with your header ID if needed
-    if (header) return -header.offsetHeight;
+            const scrollToElement = (element) => {
+                if (element) {
+                    const yOffset = getYOffset();
+                    const y =
+                        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-    // Fallback
-    return window.innerWidth < 768 ? mobileOffset : desktopOffset;
-  };
+                    window.scrollTo({
+                        top: y,
+                        behavior: "smooth",
+                    });
 
-  const scrollToElement = (element) => {
-    if (element) {
-      const yOffset = getYOffset();
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    setTimeout(() => {
+                        this.isProgrammaticScroll = false;
+                    }, 1000);
+                }
+            };
 
-      window.scrollTo({
-        top: y,
-        behavior: "smooth",
-      });
+            // If coming from a different route (e.g., 'currency-converter')
+            if (this.$route.name === "currency-converter") {
+                this.navSelect = id;
 
-      setTimeout(() => {
-        this.isProgrammaticScroll = false;
-      }, 1000);
-    }
-  };
+                this.$router.push({ name: "home" }).then(() => {
+                    this.$nextTick(() => {
+                        this.isProgrammaticScroll = true;
+                        const element = document.getElementById(id);
+                        scrollToElement(element);
+                    });
+                });
 
-  // If coming from a different route (e.g., 'currency-converter')
-  if (this.$route.name === "currency-converter") {
-    this.navSelect = id;
+                return;
+            }
 
-    this.$router.push({ name: "home" }).then(() => {
-      this.$nextTick(() => {
-        this.isProgrammaticScroll = true;
-        const element = document.getElementById(id);
-        scrollToElement(element);
-      });
-    });
-
-    return;
-  }
-
-  // If already on the home page
-  this.navSelect = id;
-  this.isProgrammaticScroll = true;
-  const element = document.getElementById(id);
-  scrollToElement(element);
-
+            // If already on the home page
+            this.navSelect = id;
+            this.isProgrammaticScroll = true;
+            const element = document.getElementById(id);
+            scrollToElement(element);
         },
-
         onScroll(item){
-              setTimeout(() => {
-                    this.scrollToSection(this.navSelect);
-                }, 1000);
+            setTimeout(() => {
+                this.scrollToSection(this.navSelect);
+            }, 1000);
         },
         handleScroll() {
             if (this.isProgrammaticScroll) return;
@@ -474,21 +469,20 @@ export default {
             }
         },
         toggleDrawer() {
-           this.isDrawerOpen = !this.isDrawerOpen;
+            this.isDrawerOpen = !this.isDrawerOpen;
 
-           const icon = document.querySelector('.animated-icon3');
-           if (icon) {
-               if (this.isDrawerOpen) {
-                   icon.classList.add('open');
-               } else {
-                   icon.classList.remove('open');
-               }
-           }
-
-         },
-         closeDrawer() {
-         this.isDrawerOpen = false;
-         },
+            const icon = document.querySelector('.animated-icon3');
+            if (icon) {
+                if (this.isDrawerOpen) {
+                    icon.classList.add('open');
+                } else {
+                    icon.classList.remove('open');
+                }
+            }
+        },
+        closeDrawer() {
+            this.isDrawerOpen = false;
+        },
         checkMobile() {
           this.isMobile = window.innerWidth < 992;
         }
@@ -506,12 +500,10 @@ export default {
     },
     beforeDestroy() {
         window.removeEventListener("scroll", this.onResizeLeft);
-        if (newVal === 'home')
-          window.removeEventListener("scroll", this.handleScroll);
+        if (this.navSelect === 'section-home"')
+            window.removeEventListener("scroll", this.handleScroll);
 
-         window.removeEventListener("resize", this.checkMobile);
-
-
+        window.removeEventListener("resize", this.checkMobile);
     },
     mounted() {
         window.scrollTo(0, 0);
@@ -527,8 +519,8 @@ export default {
     },
     watch: {
         '$route.name'(newVal) {
-         this.updateStateFromRoute(newVal);
-      },
+            this.updateStateFromRoute(newVal);
+        },
     },
 };
 </script>
