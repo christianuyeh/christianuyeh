@@ -7,13 +7,13 @@
                         class="d-flex flex-column h-100 justify-content-center"
                     >
                         <div
-                            class="hello nav-item m me-3 animate__animated animate__slideInUp"
+                            class="hello nav-item m me-3 animate__animated animate__fadeIn"
                             style="animation-delay: 0ms"
                         >
                             Hi, my name is
                         </div>
                         <div
-                            class="name nav-item m me-3 animate__animated animate__slideInUp"
+                            class="name nav-item m me-3 animate__animated animate__fadeInUp"
                             style="animation-delay: 100ms"
                         >
                             Christian Uyeh.
