@@ -8,7 +8,7 @@ I'm Christian Uyeh — a passionate full-stack developer and tech enthusiast wit
 - 💻 Currently building **innovative web apps** and contributing to open-source projects.
 - 🔭 Exploring **cloud infrastructure** and **DevOps automation**.
 - 🌱 Always learning — currently diving deep into **TypeScript** and **GraphQL**.
-- 📫 How to reach me: [christianuyeh@gmail.com](mailto:christianuyeh@gmail.com)
+- 📫 How to reach me: [chris@christianuyeh.com](mailto:chris@christianuyeh.com)
 - ⚡ Fun fact: I enjoy creating art with code and sometimes dabble in music production.
 
 ---
@@ -26,11 +26,11 @@ I'm Christian Uyeh — a passionate full-stack developer and tech enthusiast wit
 
 ## 🌟 Featured Projects
 
-| Project              | Description                                    | Tech Stack             | Link                                    |
-|----------------------|------------------------------------------------|------------------------|-----------------------------------------|
+| Project                | Description                         | Tech Stack             | Link                                                                                               |
+|------------------------|-------------------------------------|------------------------|----------------------------------------------------------------------------------------------------|
 | **Training Scheduler** | Intelligent group scheduling app for trainings | Laravel, Vue.js, MySQL | [github.com/christianuyeh/training-scheduler](https://github.com/christianuyeh/training-scheduler) |
-| **Personal Blog**     | Tech & coding articles with a sleek UI          | Nuxt.js, Markdown      | [christianuyeh.github.io](https://christianuyeh.github.io) |
-| **Task Manager API**  | REST API for task management with auth           | Node.js, Express, JWT  | [github.com/christianuyeh/task-manager-api](https://github.com/christianuyeh/task-manager-api) |
+| **Personal Blog**      | Tech & coding articles with a sleek UI | Nuxt.js, Markdown      | [christianuyeh.github.io](https://christianuyeh.github.io)                                         |
+| **Currency Converter** | REST API for Currency Converter     | vue.js,Taiwin,API      | [github.com/christianuyeh/Currency-Converter](https://github.com/christianuyeh/Currency-Converter)              |
 
 ---
 
@@ -44,7 +44,7 @@ I'm Christian Uyeh — a passionate full-stack developer and tech enthusiast wit
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/christian-uyeh-9b416a179/)  
 [![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/Uhchristian)  
-[![Email](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:christianuyeh@gmail.com)
+[![Email](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chris@christianuyeh.com)
 
 ---
 
