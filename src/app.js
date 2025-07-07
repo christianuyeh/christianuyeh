@@ -19,7 +19,7 @@ router.afterEach(() => {
         // Add small delay for smooth transition (optional)
         setTimeout(() => {
             loader.style.display = 'none';
-        }, 300);
+        }, 600);
     }
 });
 
