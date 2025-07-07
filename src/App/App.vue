@@ -89,7 +89,7 @@
                 </a>
             </div>
              <div class="mb-4">
-             <a href="mailto:chris@christianuye.com" style="text-decoration: none;">
+             <a href="mailto:chris@christianuyeh.com" style="text-decoration: none;">
          <svg
            xmlns="http://www.w3.org/2000/svg"
            width="24"
@@ -271,7 +271,7 @@
                         role="search"
                         style="animation-delay: 600ms"
                     >
-                        <a class="btn btn-resume"  onclick="this.blur();">Resume</a>
+                        <a class="btn btn-resume" href="/Christian's.docx"   download="Christian_Uyeh_Resume.docx"    onclick="this.blur();">Resume</a>
                     </form>
                 </div>
             </div>
