@@ -174,7 +174,7 @@ html {
   color: #F2D492 !important;
   transition: 0.25s !important;
   position: absolute !important;
-  /* z-index: 99999999 !important; */
+   z-index: 99999999 !important;
 }
 
 .in-touch:hover,

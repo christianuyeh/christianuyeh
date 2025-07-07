@@ -17,7 +17,7 @@
                         />
                     </svg>
                     GitHub</a>
-                <a class="btn btn-resume ms-3"  href="http://christianuyeh.test/#/currency-converter" onclick="this.blur();">
+                <a class="btn btn-resume ms-3"  href="https://curreconverter.netlify.app" target="_blank"  rel="noopener noreferrer" onclick="this.blur();">
                     <svg
                         class="mr-2"
                         stroke="currentColor"

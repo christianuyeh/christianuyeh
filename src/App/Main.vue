@@ -420,7 +420,7 @@
                         <div class="d-flex">
                             <span class="active-small-nav me-3 mt-2"></span>
                             <p class="company-sub">
-                                Collaborated to create strategic initiaticves to
+                                Collaborated to create strategic initiatives to
                                 design, code, and test solutions.
                             </p>
                         </div>
